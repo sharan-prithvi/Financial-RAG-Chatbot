@@ -10,6 +10,10 @@ Key components:
 - `vector_store.py` — Vector store creation, persistence, loading, and similarity search using Chroma + Ollama embeddings.
 - `chat_engine.py` — RetrievalQA chain using an Ollama LLM and the vector store.
 
+**Demo Video**
+https://github.com/user-attachments/assets/8ab487f8-3b46-4f8a-92a0-31da40321601
+
+
 
 **Repository layout**
 
