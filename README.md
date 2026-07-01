@@ -120,21 +120,3 @@ Troubleshooting
 If you see exceptions in the Streamlit UI, run the app from your terminal to get the full traceback for debugging.
 
 ---
-
-Recommended next steps (optional)
-
-- Add a `requirements.txt` with pinned versions used in your environment.
-- Add a Streamlit `file_uploader` to let users upload PDFs via the UI.
-- Make `OLLAMA_URL`, `MODEL_NAME`, and `CHROMA_DIR` configurable via environment variables.
-- Add basic per-file error handling and logging in `docProcessor.py`.
-
----
-
-Want me to do one of these for you? I can:
-
-- Create a `requirements.txt`.
-- Add a Streamlit file uploader and process uploaded PDFs automatically.
-- Fix the `embedding` vs `embedding_function` mismatch if your Chroma wrapper needs that.
-
-Tell me which one you want next and I will implement it.
-## How to run locally
