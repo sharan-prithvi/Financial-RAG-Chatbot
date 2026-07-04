@@ -1,12 +1,15 @@
 from langchain_community.llms import Ollama
 from langchain_classic.chains import RetrievalQA
 from langchain_core.prompts import PromptTemplate
+import os
 
 class chatEngine:
-    def __init__(self, vector_store,model_name='mistral'):
+    def __init__(self, vector_store,model_name=None):
         self.vector_store = vector_store
-        self.llm = Ollama(model=model_name, base_url='http://localhost:11434',temperature=0.1)
-        print('Initialized Ollama LLM for Chat Engine.')
+        model_name = model_name or os.getenv('OLLAMA_MODEL', 'mistral')
+        ollama_base_url = os.getenv('OLLAMA_BASE_URL', 'http://localhost:11434')
+        self.llm = Ollama(model=model_name, base_url=ollama_base_url,temperature=0.1)
+        print(f'Initialized Ollama LLM for Chat Engine with model: {model_name}.')
 
         self.prompt_template = """You are an expert financial analyst. Use the following context from financial documents to answer the question accurately.
 

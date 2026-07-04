@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.git/
+.gitignore
+chroma_db/
+data/Documents/*
+!data/Documents/.gitkeep
+.venv/
+venv/
+.env
+*.md

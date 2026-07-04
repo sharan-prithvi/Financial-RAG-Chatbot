@@ -6,8 +6,10 @@ class vectorStore:
     def __init__(self, persist_directory='chroma_db', collection_name='FinancialDocs'):
         self.persist_directory = persist_directory
         self.collection_name = collection_name
-        self.embeddings = OllamaEmbeddings(model='mistral', base_url='http://localhost:11434')
-        print('Initialized Ollama Embeddings and Vector Store settings.')
+        ollama_base_url = os.getenv('OLLAMA_BASE_URL', 'http://localhost:11434')
+        ollama_model = os.getenv('OLLAMA_MODEL', 'mistral')
+        self.embeddings = OllamaEmbeddings(model=ollama_model, base_url=ollama_base_url)
+        print(f'Initialized Ollama Embeddings and Vector Store settings with model: {ollama_model}.')
 
     def create_vector_store(self, chunks):
         print("Creating vector store...")
